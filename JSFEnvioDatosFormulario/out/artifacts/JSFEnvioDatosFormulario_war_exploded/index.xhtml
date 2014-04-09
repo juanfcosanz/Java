@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <h:head>
+       <title></title>
+   </h:head>
+<h:body>
+
+    <h:form>
+        <h:panelGrid columns="3">
+            <h:outputLabel for="txtnombre" value="Nombre: "/>
+            <h:inputText id="txtnombre" label="Nombre" required="true" value="#{mbPersona.nombre}"/>
+            <h:message for="txtnombre"/>
+
+            <h:outputLabel for="txtapepaterno" value="Apellido Paterno: "/>
+            <h:inputText id="txtapepaterno" label="Apellido Paterno" required="true" value="#{mbPersona.apePaterno}"/>
+            <h:message for="txtapepaterno" />
+
+            <h:outputLabel for="txtapematerno" value="Apellido Materno"/>
+            <h:inputText id="txtapematerno" label="Apellido Materno" required="true" value="#{mbPersona.apeMaterno}"/>
+            <h:message for="txtapematerno"/>
+
+            <h:outputLabel for="radioSexo" value="Sexo: "/>
+            <h:selectOneRadio id="radioSexo" label="Sexo" value="#{mbPersona.sexo}">
+                <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                <f:selectItem itemLabel="Femenino" itemValue="F"/>
+            </h:selectOneRadio>
+            <h:message for="radioSexo"/>
+
+            <h:outputLabel for="cbxCiudad" value="Ciudad de Procedencia: "/>
+            <h:selectOneMenu id="cbxCiudad" label="Ciudad" value="#{mbPersona.ciudad}">
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="Talavera" itemValue="Talavera"/>
+                <f:selectItem itemLabel="Acusco" itemValue="Acusco"/>
+                <f:selectItem itemLabel="Mexico" itemValue="Mexico"/>
+            </h:selectOneMenu>
+            <h:message for="cbxCiudad"/>
+
+            <h:commandButton id="btnEnviar" value="Enviar Datos" action="envio"/>
+
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>
